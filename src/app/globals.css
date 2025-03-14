@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@import 'antd/dist/reset.css';
 
 :root {
   --background: #ffffff;
@@ -23,4 +26,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
