@@ -1,8 +1,9 @@
 import { baseApi } from "../../api/baseApi";
+import { TCategoryResponse } from "../../../type/category";
 
 export const categoryAPi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getCategory: builder.query({
+    getCategory: builder.query<TCategoryResponse, void>({
       query: () => ({
         url: "/category",
         method: "GET",

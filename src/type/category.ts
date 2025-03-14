@@ -7,4 +7,9 @@ export type TCategory = {
     image: string;
   };
   
+export type TCategoryResponse = {
+  success: boolean;
+  data: TCategory[];
+};
+  
   
