@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui';
-
-export default {
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,11 +13,11 @@ export default {
         secondaryColor: "#282727",
         bgColor:"#F4F4F4",
         textSecondary:"#ef4a23",
-        hoverSecondart:"#f97618"
+        hoverSecondary:"#f97618"
       },
     },
   },
-  plugins: [daisyui],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: ["light"],
   },
