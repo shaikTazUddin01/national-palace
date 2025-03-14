@@ -9,8 +9,6 @@ const CategorySection = () => {
   const { data, isLoading } = useGetCategoryQuery(undefined);
   const router = useRouter();
 
-console.log(data);
-
   const categories = data?.data;
 
   const handleNavigate = (categoryName: string) => {
