@@ -1,8 +1,6 @@
-import {  TUserData } from "./user"
-
-export type TReview={
-    _id:string;
-    userId:TUserData;
-    review:string;
-    rating:number
-}
+export type TReview = {
+  _id: string;
+  userId: string;
+  review: string;
+  rating: number;
+};

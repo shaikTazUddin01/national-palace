@@ -20,21 +20,10 @@ export interface CustomJwtPayload {
   [key: string]: any;
 }
 
-export type TAdmin = {
-  exp: number;
-  iat: number;
-  role: string;
-  user: string;
-};
-
-export type TAdminInitialState = {
-  user: null | TAdmin;
-  token: null | string;
-};
 export type TUser = {
   exp: number;
   iat: number;
-  id:string;
+  id: string;
   role: string;
   user: string;
 };
@@ -44,31 +33,15 @@ export type TUserInitialState = {
   token: null | string;
 };
 
-export type TAdminData = {
-  _id: string;
-  key?: string;
-  name: string;
-  email: string;
-  phoneNumber: string;
-  role?: "Admin" | "SubAdmin";
-  password: string;
-  age: number;
-  address: string;
-  status: string;
-  isDeleted: boolean;
-  gender: "Male" | "Female" | "Other";
-};
-
 export type TUserData = {
-  
-  _id:string;
-  customerId:Record<string,any>
+  _id: string;
+  customerId: Record<string, any>;
   address: string;
   age: number;
   email: string;
   gender: "Male" | "Female" | "Other";
   name: string;
-image?:string;
+  image?: string;
   phoneNumber: string;
   role?: "user";
   isDeleted: boolean;

@@ -1,14 +1,10 @@
+import { toast } from "sonner";
 import { Rate } from "antd";
 import { TProduct } from "@/type";
-import "./rate.css";
-
-import { toast } from "sonner";
 import { productCart } from "@/redux/features/my-cart/myCart.slice";
-
-import { TReview } from "@/type/review";
-import ProductCardLoader from "../template/loader/product-card-loader";
 import { IoCartOutline } from "react-icons/io5";
 import { useAppDispatch, useAppSelector } from "@/redux/hook/hooks";
+
 
 const ProductCard = ({ product }: { product: TProduct }) => {
   const { _id, name, price, images } = product;

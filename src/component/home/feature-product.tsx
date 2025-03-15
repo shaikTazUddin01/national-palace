@@ -1,40 +1,36 @@
-"use client";
-
 import { useGetProductsQuery } from "@/redux/features/product/products.api";
+import { FaArrowRight } from "react-icons/fa6";
 import SectionTitle from "../template/section-title/section-title";
 import ProductCardLoader from "../template/loader/product-card-loader";
 import ProductCard from "../product/product-card";
-import { FaArrowRight } from "react-icons/fa";
 import { TProduct } from "@/type";
 
-
-const ProductsSection = () => {
-  const { data, isLoading } = useGetProductsQuery({});
+const FeaturedProducts = () => {
+  const { data, isLoading } = useGetProductsQuery({ feature: "True" });
   const products = data?.data?.result;
-  console.log(products);
 
   return (
     <div className="mt-16">
       <div className="text-center">
         <SectionTitle
-          heading="Shop Our Full Range"
-          subHeading="Endless choices await you in our collection."
+          heading="Featured Products"
+          subHeading="Check & Get Your Desired Product!"
         />
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-        {isLoading ? (
-          Array.from({ length: 10 }).map((_, idx) => (
-            <ProductCardLoader key={idx} />
-          ))
-        ) : (
-          products?.slice(0, 10).map((product: TProduct) => (
-            <ProductCard key={product?._id} product={product} />
-          ))
-        )}
+        {isLoading
+          ? Array.from({ length: 5 }).map((_, idx) => (
+              <ProductCardLoader key={idx} />
+            ))
+          : products?.map((product: TProduct) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
       </div>
+
       <div className="flex justify-end mt-5">
-        <a href="/products">
-          <p className="text-primaryColor flex items-center gap-2">
+        <a href="/products?feature">
+          <p className="flex items-center gap-2">
             Explore more
             <FaArrowRight />
           </p>
@@ -44,4 +40,4 @@ const ProductsSection = () => {
   );
 };
 
-export default ProductsSection;
+export default FeaturedProducts;
