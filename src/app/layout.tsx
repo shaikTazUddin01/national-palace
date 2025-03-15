@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainProvider from "./provider";
-import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,41 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script id="remove-grammarly-attrs" strategy="afterInteractive">
-          {`
-            document.addEventListener('DOMContentLoaded', function() {
-              const removeGrammarlyAttrs = () => {
-                const body = document.querySelector('body');
-                if (body) {
-                  body.removeAttribute('data-new-gr-c-s-check-loaded');
-                  body.removeAttribute('data-gr-ext-installed');
-                }
-              };
-              
-              // Run immediately
-              removeGrammarlyAttrs();
-              
-              // Also run after a short delay to catch late injections
-              setTimeout(removeGrammarlyAttrs, 500);
-              
-              // Create a MutationObserver to watch for attribute changes
-              const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                  if (mutation.type === 'attributes' && 
-                      (mutation.attributeName === 'data-new-gr-c-s-check-loaded' || 
-                       mutation.attributeName === 'data-gr-ext-installed')) {
-                    removeGrammarlyAttrs();
-                  }
-                });
-              });
-              
-              // Start observing the body for attribute changes
-              observer.observe(document.body, { attributes: true });
-            });
-          `}
-        </Script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

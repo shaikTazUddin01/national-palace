@@ -10,10 +10,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-/* Hide Grammarly attributes in the inspector */
-body[data-new-gr-c-s-check-loaded],
-body[data-gr-ext-installed] {
-  /* This doesn't actually change anything visually, but helps with debugging */
-  --grammarly-attributes-hidden: true;
-}
