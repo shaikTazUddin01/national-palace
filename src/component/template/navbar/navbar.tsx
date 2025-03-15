@@ -50,11 +50,11 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      <div className="text-white bg-primaryColor z-20 shadow-xl px-2 w-full fixed lg:relative">
+      <div className="text-white bg-primaryColor z-20 shadow-xl px-2 md:px-5 w-full fixed xl:relative">
         <div className="navbar max-w-7xl mx-auto p-0">
-          <div className="navbar-start lg:w-[33%]">
+          <div className="navbar-start xl:w-[33%]">
             {/* Responsive Nav Drawer */}
-            <div className="drawer lg:hidden">
+            <div className="drawer xl:hidden">
               <input id="my-drawer" type="checkbox" className="drawer-toggle" />
               <div className="drawer-content">
                 <label htmlFor="my-drawer" className="text-2xl cursor-pointer">
@@ -134,7 +134,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="hidden lg:flex">
+            <div className="hidden xl:flex">
               <Link href="/">
                 <Image src={logo} alt="" className="w-[160px]" />
               </Link>
@@ -142,13 +142,13 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Search */}
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden xl:flex">
             <SearchProduct searchboxWidthpx={550} />
           </div>
 
           {/* Mobile Logo */}
-          <div className="navbar-center lg:hidden justify-center w-full pr-12">
-            <div className="lg:hidden flex">
+          <div className="navbar-center xl:hidden justify-center w-full pr-12">
+            <div className="xl:hidden flex">
               <Link href="/">
                 <Image src={logo} alt="" className="w-[160px]" />
               </Link>
@@ -156,8 +156,8 @@ const Navbar = () => {
           </div>
 
           {/* Navigation End */}
-          <div className="navbar-end flex gap-4 lg:gap-8 items-center absolute end-0 z-20 lg:relative">
-            <div className="hover:text-textSecondary hidden lg:flex">
+          <div className="navbar-end flex gap-4 xl:gap-8 items-center absolute end-2 z-20 xl:relative">
+            <div className="hover:text-textSecondary hidden xl:flex">
               <a href="/about">
                 <div className="flex items-center gap-2">
                   <div className="text-2xl text-textSecondary">
@@ -172,7 +172,7 @@ const Navbar = () => {
             </div>
 
             {user && token ? (
-              <div className="hover:text-textSecondary hidden lg:flex">
+              <div className="hover:text-textSecondary hidden xl:flex">
                 <a href="/user/dashboard">
                   <div className="flex items-center gap-2">
                     <div className="text-2xl text-textSecondary">
@@ -186,7 +186,7 @@ const Navbar = () => {
                 </a>
               </div>
             ) : (
-              <div className="hover:text-textSecondary hidden lg:flex">
+              <div className="hover:text-textSecondary hidden xl:flex">
                 <a href="/login">
                   <div className="flex items-center gap-2">
                     <div className="text-2xl text-textSecondary">
@@ -212,7 +212,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Search Toggle */}
-            <div className="text-2xl lg:hidden pr-1" onClick={() => setShowSearchbar(!showSearchBar)}>
+            <div className="text-2xl xl:hidden pr-1" onClick={() => setShowSearchbar(!showSearchBar)}>
               <IoSearch />
             </div>
           </div>

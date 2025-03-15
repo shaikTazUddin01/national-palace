@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { Divider } from "antd";
+import { Divider, Input } from "antd";
 import { useGetProductsQuery } from "@/redux/features/product/products.api";
 import { TProduct } from "@/type";
 import { useAppDispatch } from "@/redux/hook/hooks";
