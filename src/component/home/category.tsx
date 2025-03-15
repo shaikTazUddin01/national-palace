@@ -30,7 +30,7 @@ const CategorySection = () => {
               <CategoryCardLoader key={idx} />
             ))
           ) : (
-            categories?.slice(0, 7)?.map((category: TCategory) => (
+            categories?.slice(0, categories.length >= 14 ? 14 : categories.length >= 7 ? 7 : categories.length)?.map((category: TCategory) => (
               <div
                 key={category?._id}
                 className="shadow border-[#d8d8d8] hover:border-[#b0b0b0] hover:cursor-pointer bg-white text-black transform hover:shadow-xl transition-all duration-200 ease-in-out rounded-md p-2 min-h-[207px]"

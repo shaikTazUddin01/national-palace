@@ -30,8 +30,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* About Us Section */}
           <div>
             <h3 className="text-lg font-bold uppercase mb-4">Menu</h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -91,8 +89,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-gray-400 text-sm">
-          <p>&#169; {date.getFullYear()} National-Palace Ltd | All rights reserved</p>
+        <div className="flex flex-col md:flex-row items-center justify-center mt-6 text-gray-400 text-sm ">
+          <p>
+            &#169; {date.getFullYear()} National-Palace Ltd | All rights
+            reserved
+          </p>
         </div>
       </footer>
     </div>

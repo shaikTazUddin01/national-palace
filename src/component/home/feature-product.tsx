@@ -1,3 +1,4 @@
+"use client";
 import { useGetProductsQuery } from "@/redux/features/product/products.api";
 import { FaArrowRight } from "react-icons/fa6";
 import SectionTitle from "../template/section-title/section-title";
@@ -5,16 +6,16 @@ import ProductCardLoader from "../template/loader/product-card-loader";
 import ProductCard from "../product/product-card";
 import { TProduct } from "@/type";
 
-const FeaturedProducts = () => {
+const FeatureProducts = () => {
   const { data, isLoading } = useGetProductsQuery({ feature: "True" });
   const products = data?.data?.result;
 
   return (
-    <div className="mt-16">
+    <div className="my-16">
       <div className="text-center">
         <SectionTitle
           heading="Featured Products"
-          subHeading="Check & Get Your Desired Product!"
+          subHeading="Discover Our Handpicked Selection of Elite Products"
         />
       </div>
 
@@ -40,4 +41,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default FeatureProducts;

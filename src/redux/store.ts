@@ -11,7 +11,7 @@ import {
 import productCardReducer from "./features/my-cart/myCart.slice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-
+import userInFoReducer from "./features/auth/user.slice";
 const myCartPersistConfig = {
   key: "myCart",
   storage,
@@ -19,6 +19,12 @@ const myCartPersistConfig = {
 
 const persistedMyCart = persistReducer(myCartPersistConfig, productCardReducer);
 
+const userInfoConfig = {
+  key: "user",
+  storage,
+};
+
+const persistedUser = persistReducer(userInfoConfig, userInFoReducer);
 
 export const store = configureStore({
   reducer: {
@@ -30,6 +36,7 @@ export const store = configureStore({
     pagination: productPaginationReducer,
     categoryFilter: categoryFilterReducer,
     resetFilter: resetSliceReducer,
+    userLoginInfo:persistedUser
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
